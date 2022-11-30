@@ -19,3 +19,5 @@ public class TestDataType {
                 .extract().body().jsonPath().getList("data", TemplateOfListMeasurements.class);
     }
 }
+
+
