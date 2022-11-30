@@ -16,8 +16,21 @@ public class TestDataType {
                 .contentType(ContentType.JSON)
                 .get(URL + "/data-export-template?owner-login")
                 .then().log().all()
+                .extract().
+                path("name");
+    }
+
+    @Test
+    public void getTemplateOfDataType2() {
+        List<TemplateOfListMeasurements> templateOfListMeasurements = given()
+                .when()
+                .contentType(ContentType.JSON)
+                .get(URL + "/data-export-template?owner-login")
+                .then().log().all()
                 .extract().body().jsonPath().getList("data", TemplateOfListMeasurements.class);
     }
 }
+
+
 
 
